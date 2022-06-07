@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Loader from '../components/Loader'
 import ProductCard from '../components/ProductCard'
 import {useCallApi} from '../Hooks/ApiCall'
@@ -20,9 +21,12 @@ function Home(){
     }
 
     if(products.data){
-        content=
-        products.data.map((product, key) =>            
-            <ProductCard product={product}/>            
+        content=(
+        products.data.map((product, key) =>
+                <Link to={`products/${product.id}`}>
+                    <ProductCard product={product}/>
+                </Link>
+        )
         )
     }
     return (

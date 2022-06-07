@@ -1,10 +1,10 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 function ProductCard(props){
     return(        
         <div className='max-w-sm'>
-        <Link to={`products/${props.product.id}`}>
+        {/* <Link to={`products/${props.product.id}`}> */}
             <div className='bg-red-400 border rounded-lg p-2 text-white mb-2 w-auto'>
                 <h1>
                     {props.product.name}
@@ -16,10 +16,10 @@ function ProductCard(props){
                     $ {props.product.price}
                 </div>
                 <div>
-                    {props.product.description}
+                    {props.product.description}￼
                 </div>             
             </div>
-        </Link>
+        {/* </Link> */}
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../components/Loader'
+import ProductCard from '../components/ProductCard'
 import {useCallApi} from '../Hooks/ApiCall'
 
 function Product(){
@@ -19,20 +20,21 @@ function Product(){
     
     if(product.data){
         content=
-        <div className='bg-red-400 border rounded-lg p-2 text-white mb-2 max-w-md'>
-            <h1>
-                {product.data.name}
-            </h1>
-            <div >
-                <img src={product.data.image} alt='img' className='w-full h-48 object-cover'/>
-            </div>
-            <div className='font-bold text-black pt-1'>
-                $ {product.data.price}
-            </div>
-            <div>
-                {product.data.description}
-            </div>             
-        </div> 
+        <ProductCard product={product.data}/>
+        // <div className='bg-red-400 border rounded-lg p-2 text-white mb-2 max-w-md'>
+        //     <h1>
+        //         {product.data.name}
+        //     </h1>
+        //     <div >
+        //         <img src={`${product.data.image}`} alt='img' className='w-full h-48 object-cover'/>
+        //     </div>
+        //     <div className='font-bold text-black pt-1'>
+        //         $ {product.data.price}
+        //     </div>
+        //     <div>
+        //         {product.data.description}
+        //     </div>             
+        // </div> 
     }
 
     if(product.loading){
